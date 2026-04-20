@@ -23,10 +23,6 @@ class LLMHandler:
         self.groq_client = Groq(api_key=GROQ_API_KEY)
         self.cohere_client = cohere.ClientV2(api_key=COHERE_API_KEY)
 
-    # ------------------------------------------------------------------ #
-    #  Individual LLM queries                                              #
-    # ------------------------------------------------------------------ #
-
     def ask_gemini(self, question: str) -> str:
         try:
             response = self.gemini_client.models.generate_content(
@@ -69,10 +65,6 @@ class LLMHandler:
             return response.message.content[0].text.strip()
         except Exception as e:
             return f"[Cohere недоступний: {e}]"
-
-    # ------------------------------------------------------------------ #
-    #  Aggregation                                                         #
-    # ------------------------------------------------------------------ #
 
     def get_all_responses(self, question: str) -> dict:
         """Query all three LLMs and return a dict of their answers."""

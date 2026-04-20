@@ -1,10 +1,3 @@
-"""
-Лабораторна робота №8  –  Варіант 9/10
-Тема: Бот підтримки дій при ПОЖЕЖІ У ГРОМАДСЬКИХ МІСЦЯХ
-Три LLM вільного доступу: Google Gemini, Groq/LLaMA-3.1, Cohere/Command-R
-Аудіоформат: Google STT (вхід) + gTTS (вихід)
-"""
-
 import sys
 from audio_handler import AudioHandler
 from llm_handler import LLMHandler
